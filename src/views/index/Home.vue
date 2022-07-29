@@ -44,22 +44,23 @@
 
     <div class="center-board">
       <div class="action-bar">
-        <el-button icon="el-icon-video-play" type="text" @click="run">
+        <!-- <el-button icon="el-icon-video-play" type="text" @click="run">
           运行
-        </el-button>
+        </el-button> -->
         <el-button icon="el-icon-view" type="text" @click="showJson">
           查看json
         </el-button>
-        <el-button icon="el-icon-download" type="text" @click="download">
+        <!-- <el-button icon="el-icon-download" type="text" @click="download">
           导出vue文件
-        </el-button>
-        <el-button class="copy-btn-main" icon="el-icon-document-copy" type="text" @click="copy">
+        </el-button> -->
+        <!-- <el-button class="copy-btn-main" icon="el-icon-document-copy" type="text" @click="copy">
           复制代码
-        </el-button>
+        </el-button> -->
         <el-button class="delete-btn" icon="el-icon-delete" type="text" @click="empty">
           清空
         </el-button>
       </div>
+      <!-- 拖拽过来的表单项 -->
       <el-scrollbar class="center-scrollbar">
         <el-row class="center-board-row" :gutter="formConf.gutter">
           <el-form
@@ -98,24 +99,25 @@
       @fetch-data="fetchData"
     />
 
-    <form-drawer
+    <!-- 表单原始代码展示 -->
+    <!-- <form-drawer
       :visible.sync="drawerVisible"
       :form-data="formData"
       size="100%"
       :generate-conf="generateConf"
-    />
+    /> -->
     <json-drawer
       size="60%"
       :visible.sync="jsonDrawerVisible"
       :json-str="JSON.stringify(formData)"
       @refresh="refreshJson"
     />
-    <code-type-dialog
+    <!-- <code-type-dialog
       :visible.sync="dialogVisible"
       title="选择生成类型"
       :show-file-name="showFileName"
       @confirm="generate"
-    />
+    /> -->
     <input id="copyNode" type="hidden">
   </div>
 </template>
@@ -140,7 +142,7 @@ import {
 } from '@/components/generator/html'
 import { makeUpJs } from '@/components/generator/js'
 import { makeUpCss } from '@/components/generator/css'
-import drawingDefalut from '@/components/generator/drawingDefalut'
+import drawingDefault from '@/components/generator/drawingDefault'
 import logo from '@/assets/logo.png'
 import CodeTypeDialog from './CodeTypeDialog'
 import DraggableItem from './DraggableItem'
@@ -176,16 +178,16 @@ export default {
       selectComponents,
       layoutComponents,
       labelWidth: 100,
-      drawingList: drawingDefalut,
+      drawingList: drawingDefault,
       drawingData: {},
-      activeId: drawingDefalut[0].formId,
+      activeId: drawingDefault[0].formId,
       drawerVisible: false,
       formData: {},
-      dialogVisible: false,
+      // dialogVisible: false,
       jsonDrawerVisible: false,
-      generateConf: null,
+      // generateConf: null,
       showFileName: false,
-      activeData: drawingDefalut[0],
+      activeData: drawingDefault[0],
       saveDrawingListDebounce: debounce(340, saveDrawingList),
       saveIdGlobalDebounce: debounce(340, saveIdGlobal),
       leftComponents: [
@@ -242,7 +244,7 @@ export default {
     if (Array.isArray(drawingListInDB) && drawingListInDB.length > 0) {
       this.drawingList = drawingListInDB
     } else {
-      this.drawingList = drawingDefalut
+      this.drawingList = drawingDefault
     }
     this.activeFormItem(this.drawingList[0])
     if (formConfInDB) {
@@ -251,20 +253,20 @@ export default {
     loadBeautifier(btf => {
       beautifier = btf
     })
-    const clipboard = new ClipboardJS('#copyNode', {
-      text: trigger => {
-        const codeStr = this.generateCode()
-        this.$notify({
-          title: '成功',
-          message: '代码已复制到剪切板，可粘贴。',
-          type: 'success'
-        })
-        return codeStr
-      }
-    })
-    clipboard.on('error', e => {
-      this.$message.error('代码复制失败')
-    })
+    // const clipboard = new ClipboardJS('#copyNode', {
+    //   text: trigger => {
+    //     const codeStr = this.generateCode()
+    //     this.$notify({
+    //       title: '成功',
+    //       message: '代码已复制到剪切板，可粘贴。 !!mounted!!',
+    //       type: 'success'
+    //     })
+    //     return codeStr
+    //   }
+    // })
+    // clipboard.on('error', e => {
+    //   this.$message.error('代码复制失败')
+    // })
   },
   methods: {
     setObjectValueReduce(obj, strKeys, data) {
@@ -284,7 +286,7 @@ export default {
       const respData = dataPath.split('.').reduce((pre, item) => pre[item], resp)
 
       // 将请求回来的数据，赋值到指定属性。
-      // 以el-tabel为例，根据Element文档，应该将数据赋值给el-tabel的data属性，所以dataConsumer的值应为'data';
+      // 以el-table为例，根据Element文档，应该将数据赋值给el-table的data属性，所以dataConsumer的值应为'data';
       // 此时赋值代码可写成 component[dataConsumer] = respData；
       // 但为支持更深层级的赋值（如：dataConsumer的值为'options.data'）,使用setObjectValueReduce
       this.setObjectValueReduce(component, dataConsumer, respData)
@@ -359,11 +361,12 @@ export default {
         ...this.formConf
       }
     },
-    generate(data) {
-      const func = this[`exec${titleCase(this.operationType)}`]
-      this.generateConf = data
-      func && func(data)
-    },
+    // 生成代码时，根据选择生成对应的页面、弹窗代码
+    // generate(data) {
+    //   const func = this[`exec${titleCase(this.operationType)}`]
+    //   this.generateConf = data
+    //   func && func(data)
+    // },
     execRun(data) {
       this.AssembleFormData()
       this.drawerVisible = true
@@ -376,6 +379,7 @@ export default {
     execCopy(data) {
       document.getElementById('copyNode').click()
     },
+    // 顶部操作栏清空按钮
     empty() {
       this.$confirm('确定要清空所有组件吗？', '提示', { type: 'warning' }).then(
         () => {
@@ -384,12 +388,14 @@ export default {
         }
       )
     },
+    // 复制表单项组件
     drawingItemCopy(item, list) {
       let clone = deepClone(item)
       clone = this.createIdAndKey(clone)
       list.push(clone)
       this.activeFormItem(clone)
     },
+    // 删除表单项组件
     drawingItemDelete(index, list) {
       list.splice(index, 1)
       this.$nextTick(() => {
@@ -399,33 +405,33 @@ export default {
         }
       })
     },
-    generateCode() {
-      const { type } = this.generateConf
-      this.AssembleFormData()
-      const script = vueScript(makeUpJs(this.formData, type))
-      const html = vueTemplate(makeUpHtml(this.formData, type))
-      const css = cssStyle(makeUpCss(this.formData))
-      return beautifier.html(html + script + css, beautifierConf.html)
-    },
+    // generateCode() {
+    //   const { type } = this.generateConf
+    //   this.AssembleFormData()
+    //   const script = vueScript(makeUpJs(this.formData, type))
+    //   const html = vueTemplate(makeUpHtml(this.formData, type))
+    //   const css = cssStyle(makeUpCss(this.formData))
+    //   return beautifier.html(html + script + css, beautifierConf.html)
+    // },
     showJson() {
       this.AssembleFormData()
       this.jsonDrawerVisible = true
     },
-    download() {
-      this.dialogVisible = true
-      this.showFileName = true
-      this.operationType = 'download'
-    },
-    run() {
-      this.dialogVisible = true
-      this.showFileName = false
-      this.operationType = 'run'
-    },
-    copy() {
-      this.dialogVisible = true
-      this.showFileName = false
-      this.operationType = 'copy'
-    },
+    // download() {
+    //   this.dialogVisible = true
+    //   this.showFileName = true
+    //   this.operationType = 'download'
+    // },
+    // run() {
+    //   this.dialogVisible = true
+    //   this.showFileName = false
+    //   this.operationType = 'run'
+    // },
+    // copy() {
+    //   this.dialogVisible = true
+    //   this.showFileName = false
+    //   this.operationType = 'copy'
+    // },
     tagChange(newTag) {
       newTag = this.cloneComponent(newTag)
       const config = newTag.__config__
@@ -456,6 +462,7 @@ export default {
         })
       }
     },
+    // json 展示页刷新按钮
     refreshJson(data) {
       this.drawingList = deepClone(data.fields)
       delete data.fields
