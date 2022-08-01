@@ -216,6 +216,8 @@
               />
             </el-select>
           </el-form-item>
+          <!---->
+          <!-- 上传组件设置 -->
           <el-form-item v-if="activeData.name !== undefined" label="文件字段名">
             <el-input v-model="activeData.name" placeholder="请输入上传文件字段名" />
           </el-form-item>
@@ -286,6 +288,8 @@
           >
             <el-input v-model="activeData.__slot__.default" placeholder="请输入按钮文字" />
           </el-form-item>
+          <!-- 上传组件设置 -->
+          <!---->
           <el-form-item v-if="activeData['range-separator'] !== undefined" label="分隔符">
             <el-input v-model="activeData['range-separator']" placeholder="请输入分隔符" />
           </el-form-item>
@@ -339,6 +343,7 @@
             <el-divider />
           </template>
 
+          <!-- 级联选择、表格的 选项设置 -->
           <template v-if="['el-cascader', 'el-table'].includes(activeData.__config__.tag)">
             <el-divider>选项</el-divider>
             <el-form-item v-if="activeData.__config__.dataType" label="数据类型">
@@ -416,6 +421,7 @@
             </div>
             <el-divider />
           </template>
+          <!-- 级联选择、表格的 选项设置 -->
 
           <el-form-item v-if="activeData.__config__.optionType !== undefined" label="选项样式">
             <el-radio-group v-model="activeData.__config__.optionType">
@@ -563,6 +569,7 @@
             </el-tree>
           </template>
 
+          <!-- 正则校验设置 -->
           <template v-if="Array.isArray(activeData.__config__.regList)">
             <el-divider>正则校验</el-divider>
             <div
@@ -586,6 +593,7 @@
               </el-button>
             </div>
           </template>
+          <!-- 正则校验设置 -->
         </el-form>
         <!-- 表单属性 -->
         <el-form v-show="currentTab === 'form'" size="small" label-width="90px">
@@ -643,6 +651,7 @@
       </el-scrollbar>
     </div>
 
+    <!-- 级联选择添加节点弹窗 -->
     <treeNode-dialog :visible.sync="dialogVisible" title="添加选项" @commit="addNode" />
     <icons-dialog :visible.sync="iconsVisible" :current="activeData[currentIconModel]" @select="setIcon" />
   </div>

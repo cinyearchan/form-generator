@@ -150,7 +150,6 @@ export default {
       drawingList: drawingDefault,
       drawingData: {},
       activeId: drawingDefault[0].formId,
-      drawerVisible: false,
       formData: {},
       jsonDrawerVisible: false,
       showFileName: false,
@@ -305,6 +304,7 @@ export default {
       }
       return item
     },
+    // 构建表单描述数据
     AssembleFormData() {
       this.formData = {
         fields: deepClone(this.drawingList),
@@ -337,6 +337,7 @@ export default {
         }
       })
     },
+    // 查看json按钮
     showJson() {
       this.AssembleFormData()
       this.jsonDrawerVisible = true
