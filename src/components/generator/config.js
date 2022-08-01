@@ -74,36 +74,36 @@ export const inputComponents = [
     readonly: false,
     disabled: false
   },
-  {
-    __config__: {
-      label: '密码',
-      showLabel: true,
-      labelWidth: null,
-      changeTag: true,
-      tag: 'el-input',
-      tagIcon: 'password',
-      defaultValue: undefined,
-      layout: 'colFormItem',
-      span: 24,
-      required: true,
-      regList: [],
-      document: 'https://element.eleme.cn/#/zh-CN/component/input'
-    },
-    __slot__: {
-      prepend: '',
-      append: ''
-    },
-    placeholder: '请输入',
-    'show-password': true,
-    style: { width: '100%' },
-    clearable: true,
-    'prefix-icon': '',
-    'suffix-icon': '',
-    maxlength: null,
-    'show-word-limit': false,
-    readonly: false,
-    disabled: false
-  },
+  // {
+  //   __config__: {
+  //     label: '密码',
+  //     showLabel: true,
+  //     labelWidth: null,
+  //     changeTag: true,
+  //     tag: 'el-input',
+  //     tagIcon: 'password',
+  //     defaultValue: undefined,
+  //     layout: 'colFormItem',
+  //     span: 24,
+  //     required: true,
+  //     regList: [],
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/input'
+  //   },
+  //   __slot__: {
+  //     prepend: '',
+  //     append: ''
+  //   },
+  //   placeholder: '请输入',
+  //   'show-password': true,
+  //   style: { width: '100%' },
+  //   clearable: true,
+  //   'prefix-icon': '',
+  //   'suffix-icon': '',
+  //   maxlength: null,
+  //   'show-word-limit': false,
+  //   readonly: false,
+  //   disabled: false
+  // },
   {
     __config__: {
       label: '计数器',
@@ -127,26 +127,27 @@ export const inputComponents = [
     precision: undefined,
     'controls-position': '',
     disabled: false
-  },
-  {
-    __config__: {
-      label: '编辑器',
-      showLabel: true,
-      changeTag: true,
-      labelWidth: null,
-      tag: 'tinymce',
-      tagIcon: 'rich-text',
-      defaultValue: null,
-      span: 24,
-      layout: 'colFormItem',
-      required: true,
-      regList: [],
-      document: 'http://tinymce.ax-z.cn'
-    },
-    placeholder: '请输入',
-    height: 300, // 编辑器高度
-    branding: false // 隐藏右下角品牌烙印
   }
+  // ,
+  // {
+  //   __config__: {
+  //     label: '编辑器',
+  //     showLabel: true,
+  //     changeTag: true,
+  //     labelWidth: null,
+  //     tag: 'tinymce',
+  //     tagIcon: 'rich-text',
+  //     defaultValue: null,
+  //     span: 24,
+  //     layout: 'colFormItem',
+  //     required: true,
+  //     regList: [],
+  //     document: 'http://tinymce.ax-z.cn'
+  //   },
+  //   placeholder: '请输入',
+  //   height: 300, // 编辑器高度
+  //   branding: false // 隐藏右下角品牌烙印
+  // }
 ]
 
 // 选择型组件 【左面板】
@@ -434,79 +435,80 @@ export const selectComponents = [
     format: 'yyyy-MM-dd',
     'value-format': 'yyyy-MM-dd',
     readonly: false
-  },
-  {
-    __config__: {
-      label: '评分',
-      tag: 'el-rate',
-      tagIcon: 'rate',
-      defaultValue: 0,
-      span: 24,
-      showLabel: true,
-      labelWidth: null,
-      layout: 'colFormItem',
-      required: true,
-      regList: [],
-      changeTag: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/rate'
-    },
-    style: {},
-    max: 5,
-    'allow-half': false,
-    'show-text': false,
-    'show-score': false,
-    disabled: false
-  },
-  {
-    __config__: {
-      label: '颜色选择',
-      tag: 'el-color-picker',
-      tagIcon: 'color',
-      span: 24,
-      defaultValue: null,
-      showLabel: true,
-      labelWidth: null,
-      layout: 'colFormItem',
-      required: true,
-      regList: [],
-      changeTag: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/color-picker'
-    },
-    'show-alpha': false,
-    'color-format': '',
-    disabled: false,
-    size: 'medium'
-  },
-  {
-    __config__: {
-      label: '上传',
-      tag: 'el-upload',
-      tagIcon: 'upload',
-      layout: 'colFormItem',
-      defaultValue: null,
-      showLabel: true,
-      labelWidth: null,
-      required: true,
-      span: 24,
-      showTip: false,
-      buttonText: '点击上传',
-      regList: [],
-      changeTag: true,
-      fileSize: 2,
-      sizeUnit: 'MB',
-      document: 'https://element.eleme.cn/#/zh-CN/component/upload'
-    },
-    __slot__: {
-      'list-type': true
-    },
-    action: 'https://jsonplaceholder.typicode.com/posts/',
-    disabled: false,
-    accept: '',
-    name: 'file',
-    'auto-upload': true,
-    'list-type': 'text',
-    multiple: false
   }
+  // ,
+  // {
+  //   __config__: {
+  //     label: '评分',
+  //     tag: 'el-rate',
+  //     tagIcon: 'rate',
+  //     defaultValue: 0,
+  //     span: 24,
+  //     showLabel: true,
+  //     labelWidth: null,
+  //     layout: 'colFormItem',
+  //     required: true,
+  //     regList: [],
+  //     changeTag: true,
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/rate'
+  //   },
+  //   style: {},
+  //   max: 5,
+  //   'allow-half': false,
+  //   'show-text': false,
+  //   'show-score': false,
+  //   disabled: false
+  // },
+  // {
+  //   __config__: {
+  //     label: '颜色选择',
+  //     tag: 'el-color-picker',
+  //     tagIcon: 'color',
+  //     span: 24,
+  //     defaultValue: null,
+  //     showLabel: true,
+  //     labelWidth: null,
+  //     layout: 'colFormItem',
+  //     required: true,
+  //     regList: [],
+  //     changeTag: true,
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/color-picker'
+  //   },
+  //   'show-alpha': false,
+  //   'color-format': '',
+  //   disabled: false,
+  //   size: 'medium'
+  // },
+  // {
+  //   __config__: {
+  //     label: '上传',
+  //     tag: 'el-upload',
+  //     tagIcon: 'upload',
+  //     layout: 'colFormItem',
+  //     defaultValue: null,
+  //     showLabel: true,
+  //     labelWidth: null,
+  //     required: true,
+  //     span: 24,
+  //     showTip: false,
+  //     buttonText: '点击上传',
+  //     regList: [],
+  //     changeTag: true,
+  //     fileSize: 2,
+  //     sizeUnit: 'MB',
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/upload'
+  //   },
+  //   __slot__: {
+  //     'list-type': true
+  //   },
+  //   action: 'https://jsonplaceholder.typicode.com/posts/',
+  //   disabled: false,
+  //   accept: '',
+  //   name: 'file',
+  //   'auto-upload': true,
+  //   'list-type': 'text',
+  //   multiple: false
+  // }
 ]
 
 // 布局型组件 【左面板】
@@ -522,108 +524,109 @@ export const layoutComponents = [
     type: 'default',
     justify: 'start',
     align: 'top'
-  },
-  {
-    __config__: {
-      label: '按钮',
-      showLabel: true,
-      changeTag: true,
-      labelWidth: null,
-      tag: 'el-button',
-      tagIcon: 'button',
-      span: 24,
-      layout: 'colFormItem',
-      document: 'https://element.eleme.cn/#/zh-CN/component/button'
-    },
-    __slot__: {
-      default: '主要按钮'
-    },
-    type: 'primary',
-    icon: 'el-icon-search',
-    round: false,
-    size: 'medium',
-    plain: false,
-    circle: false,
-    disabled: false
-  },
-  {
-    __config__: {
-      layout: 'colFormItem',
-      tagIcon: 'table',
-      tag: 'el-table',
-      document: 'https://element.eleme.cn/#/zh-CN/component/table',
-      span: 24,
-      formId: 101,
-      renderKey: 1595761764203,
-      componentName: 'row101',
-      showLabel: true,
-      changeTag: true,
-      labelWidth: null,
-      label: '表格[开发中]',
-      dataType: 'dynamic',
-      method: 'get',
-      dataPath: 'list',
-      dataConsumer: 'data',
-      url: 'https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/tableData',
-      children: [{
-        __config__: {
-          layout: 'raw',
-          tag: 'el-table-column',
-          renderKey: 15957617660153
-        },
-        prop: 'date',
-        label: '日期'
-      }, {
-        __config__: {
-          layout: 'raw',
-          tag: 'el-table-column',
-          renderKey: 15957617660152
-        },
-        prop: 'address',
-        label: '地址'
-      }, {
-        __config__: {
-          layout: 'raw',
-          tag: 'el-table-column',
-          renderKey: 15957617660151
-        },
-        prop: 'name',
-        label: '名称'
-      }, {
-        __config__: {
-          layout: 'raw',
-          tag: 'el-table-column',
-          renderKey: 1595774496335,
-          children: [
-            {
-              __config__: {
-                label: '按钮',
-                tag: 'el-button',
-                tagIcon: 'button',
-                layout: 'raw',
-                renderKey: 1595779809901
-              },
-              __slot__: {
-                default: '主要按钮'
-              },
-              type: 'primary',
-              icon: 'el-icon-search',
-              round: false,
-              size: 'medium'
-            }
-          ]
-        },
-        label: '操作'
-      }]
-    },
-    data: [],
-    directives: [{
-      name: 'loading',
-      value: true
-    }],
-    border: true,
-    type: 'default',
-    justify: 'start',
-    align: 'top'
   }
+  // ,
+  // {
+  //   __config__: {
+  //     label: '按钮',
+  //     showLabel: true,
+  //     changeTag: true,
+  //     labelWidth: null,
+  //     tag: 'el-button',
+  //     tagIcon: 'button',
+  //     span: 24,
+  //     layout: 'colFormItem',
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/button'
+  //   },
+  //   __slot__: {
+  //     default: '主要按钮'
+  //   },
+  //   type: 'primary',
+  //   icon: 'el-icon-search',
+  //   round: false,
+  //   size: 'medium',
+  //   plain: false,
+  //   circle: false,
+  //   disabled: false
+  // },
+  // {
+  //   __config__: {
+  //     layout: 'colFormItem',
+  //     tagIcon: 'table',
+  //     tag: 'el-table',
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/table',
+  //     span: 24,
+  //     formId: 101,
+  //     renderKey: 1595761764203,
+  //     componentName: 'row101',
+  //     showLabel: true,
+  //     changeTag: true,
+  //     labelWidth: null,
+  //     label: '表格[开发中]',
+  //     dataType: 'dynamic',
+  //     method: 'get',
+  //     dataPath: 'list',
+  //     dataConsumer: 'data',
+  //     url: 'https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/tableData',
+  //     children: [{
+  //       __config__: {
+  //         layout: 'raw',
+  //         tag: 'el-table-column',
+  //         renderKey: 15957617660153
+  //       },
+  //       prop: 'date',
+  //       label: '日期'
+  //     }, {
+  //       __config__: {
+  //         layout: 'raw',
+  //         tag: 'el-table-column',
+  //         renderKey: 15957617660152
+  //       },
+  //       prop: 'address',
+  //       label: '地址'
+  //     }, {
+  //       __config__: {
+  //         layout: 'raw',
+  //         tag: 'el-table-column',
+  //         renderKey: 15957617660151
+  //       },
+  //       prop: 'name',
+  //       label: '名称'
+  //     }, {
+  //       __config__: {
+  //         layout: 'raw',
+  //         tag: 'el-table-column',
+  //         renderKey: 1595774496335,
+  //         children: [
+  //           {
+  //             __config__: {
+  //               label: '按钮',
+  //               tag: 'el-button',
+  //               tagIcon: 'button',
+  //               layout: 'raw',
+  //               renderKey: 1595779809901
+  //             },
+  //             __slot__: {
+  //               default: '主要按钮'
+  //             },
+  //             type: 'primary',
+  //             icon: 'el-icon-search',
+  //             round: false,
+  //             size: 'medium'
+  //           }
+  //         ]
+  //       },
+  //       label: '操作'
+  //     }]
+  //   },
+  //   data: [],
+  //   directives: [{
+  //     name: 'loading',
+  //     value: true
+  //   }],
+  //   border: true,
+  //   type: 'default',
+  //   justify: 'start',
+  //   align: 'top'
+  // }
 ]

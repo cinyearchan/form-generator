@@ -3,15 +3,15 @@ import ELEMENT from 'element-ui'
 import pluginsConfig from './pluginsConfig'
 
 // monaco-editor单例
-let monacoEidtor
+let monacoEditor
 
 /**
  * 动态加载monaco-editor cdn资源
  * @param {Function} cb 回调，必填
  */
 export default function loadMonaco(cb) {
-  if (monacoEidtor) {
-    cb(monacoEidtor)
+  if (monacoEditor) {
+    cb(monacoEditor)
     return
   }
 
@@ -33,8 +33,8 @@ export default function loadMonaco(cb) {
   loadScript(`${vs}/loader.js`, () => {
     window.require(['vs/editor/editor.main'], () => {
       loading.close()
-      monacoEidtor = window.monaco
-      cb(monacoEidtor)
+      monacoEditor = window.monaco
+      cb(monacoEditor)
     })
   })
 }

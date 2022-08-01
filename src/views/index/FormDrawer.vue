@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <el-drawer v-bind="$attrs" v-on="$listeners" @opened="onOpen" @close="onClose">
       <div style="height:100%">
@@ -329,4 +329,4 @@ export default {
 ::v-deep .el-drawer__header {
   display: none;
 }
-</style>
+</style> -->

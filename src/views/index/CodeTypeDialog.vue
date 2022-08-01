@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <el-dialog
       v-bind="$attrs"
@@ -107,4 +107,4 @@ export default {
 
 <style lang="scss" scoped>
 
-</style>
+</style> -->
