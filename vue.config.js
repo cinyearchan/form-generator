@@ -40,11 +40,11 @@ module.exports = {
   },
   productionSourceMap: false,
   configureWebpack: {
-    externals: {
-      vue: 'Vue',
-      'vue-router': 'VueRouter',
-      'element-ui': 'ELEMENT'
-    }
+    // externals: { // 将这些依赖从项目里独立出来，使用 cdn 上的资源
+    //   vue: 'Vue',
+    //   'vue-router': 'VueRouter',
+    //   'element-ui': 'ELEMENT'
+    // }
   },
   chainWebpack(config) {
     // set svg-sprite-loader
