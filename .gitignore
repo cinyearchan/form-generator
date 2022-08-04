@@ -5,6 +5,8 @@ node_modules
 /src/components/render/lib
 /src/components/tinymce/lib
 
+src-old
+
 # local env files
 .env.local
 .env.*.local
